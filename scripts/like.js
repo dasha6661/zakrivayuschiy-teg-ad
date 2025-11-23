@@ -1,13 +1,3 @@
-/* этот скрипт использует такие имена классов:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-Если эти классы поменять в HTML, скрипт перестанет работать. Будьте аккуратны.
-*/
-
 const likeHeartArray = document.querySelectorAll('.like-icon');
 const likeButtonArray = document.querySelectorAll('.card__like-button');
 const iconButtonArray = document.querySelectorAll('.card__icon-button');
@@ -27,15 +17,47 @@ function toggleIsLiked(heart, button) {
 }
 
 function setButtonText(heart, button) {
-  if ([...heart.classList].includes('is-liked')) {
-    setTimeout(
-      () => (button.querySelector('.button__text').textContent = 'Unlike'),
-      500
-    );
+  const textEl = button.querySelector('.button__text');
+  if (heart.classList.contains('is-liked')) {
+    setTimeout(() => (textEl.textContent = 'Unlike'), 500);
   } else {
-    setTimeout(
-      () => (button.querySelector('.button__text').textContent = 'Like'),
-      500
-    );
+    setTimeout(() => (textEl.textContent = 'Like'), 500);
   }
 }
+
+function changeTheme(theme) {
+  document.documentElement.className = '';
+  document.documentElement.classList.add(`theme-${theme}`);
+  localStorage.setItem('theme', theme);
+}
+
+(function initTheme() {
+  const saved = localStorage.getItem('theme');
+  if (saved) changeTheme(saved);
+})();
+
+document.addEventListener('DOMContentLoaded', () => {
+  const root = document.documentElement;
+  const buttons = document.querySelectorAll('.theme-menu__button');
+
+  function setDisabled(theme) {
+    buttons.forEach((btn) => {
+      if (btn.getAttribute('data-theme') === theme) {
+        btn.setAttribute('disabled', true);
+      } else {
+        btn.removeAttribute('disabled');
+      }
+    });
+  }
+
+  const current = [...root.classList].find(cls => cls.startsWith('theme-'))?.slice(6) || 'auto';
+  setDisabled(current);
+
+  buttons.forEach((btn) => {
+    btn.onclick = () => {
+      const theme = btn.getAttribute('data-theme');
+      changeTheme(theme);
+      setDisabled(theme);
+    };
+  });
+});

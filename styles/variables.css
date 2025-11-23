@@ -1,1 +1,27 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --color-black: black;
+  --color-white: white;
+  --color-green: lime; /* #00cc14 ближе к "lime", чем к "green" */
+
+  --text-color: var(--color-black, black);
+  --page-background-color: var(--color-white, white);
+
+  --page-main-font-family: "Inter", sans-serif;
+  --page-main-font-weight: 400;
+  --page-accent-font-family: "PressStart2P", fantasy;
+  --page-background-image: repeating-linear-gradient(
+      to left,
+      lightgray 0 2px,
+      transparent 2px 4px
+    ),
+    repeating-linear-gradient(to bottom, lightgray 0 2px, transparent 2px 4px),
+    linear-gradient(to bottom, gainsboro 0.01%, black);
+
+  --like-main-body-color: none;
+  --like-contour-color: var(--text-color, black);
+  --like-sparks-color: red;
+
+  --headings-font-weight: 700;
+
+  --button-text-color: var(--page-background-color, white);
+}

@@ -1,4 +1,3 @@
-/* === Тема === */
 function changeTheme(theme) {
   document.documentElement.className = '';
   document.documentElement.classList.add(`theme-${theme}`);

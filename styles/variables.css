@@ -1,27 +1,18 @@
 :root {
-  --color-black: black;
-  --color-white: white;
-  --color-green: lime; /* #00cc14 ближе к "lime", чем к "green" */
+  --font-main: "Inter-Variable";
+  --font-accent: "PressStart2P";
+  
+  --font-weight-main: 400;
+  --font-weight-title: 700;
+  
+  --color-bg: #fff;
+  --color-main: #000;
+  --color-heart-cntr: #000;
+  --color-heart-mb: #f00;
+  --color-blend: #fff;
 
-  --text-color: var(--color-black, black);
-  --page-background-color: var(--color-white, white);
-
-  --page-main-font-family: "Inter", sans-serif;
-  --page-main-font-weight: 400;
-  --page-accent-font-family: "PressStart2P", fantasy;
-  --page-background-image: repeating-linear-gradient(
-      to left,
-      lightgray 0 2px,
-      transparent 2px 4px
-    ),
-    repeating-linear-gradient(to bottom, lightgray 0 2px, transparent 2px 4px),
-    linear-gradient(to bottom, gainsboro 0.01%, black);
-
-  --like-main-body-color: none;
-  --like-contour-color: var(--text-color, black);
-  --like-sparks-color: red;
-
-  --headings-font-weight: 700;
-
-  --button-text-color: var(--page-background-color, white);
+  --img-bg:
+    repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 2px 4px),
+    repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
+    linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
 }

@@ -1,12 +1,3 @@
-@keyframes moveArrow {
-  from {
-    inset-inline-start: -16px;
-  }
-  to {
-    inset-inline-start: -12px;
-  }
-}
-
 @keyframes scaleHeart {
   from {
     transform: scale(1);

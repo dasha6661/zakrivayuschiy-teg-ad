@@ -16,24 +16,6 @@
   }
 }
 
-.theme-menu__button {
-  transition: opacity 0.5s ease;
-}
-
-.theme-menu__button:disabled::before {
-  animation: moveArrow 0.5s ease-in-out infinite alternate;
-}
-
-.theme-menu__button::after {
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s;
-}
-
-.theme-menu__button:focus-visible::after {
-  transform: scaleX(1);
-}
-
 .btn-shad {
   transition: box-shadow 0.3s ease;
 }

@@ -1,3 +1,15 @@
+/* Здесь вы напишете основную часть стилей страницы.
+
+Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
+✦ like-icon — для svg-иконки анимированного сердца
+✦ card__like-button — для кнопки Like рядом с иконкой
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
+✦ button__text — для обозначения текстового элемента внутри кнопки
+
+*/
+
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -90,7 +102,7 @@
 }
 
 .card__title {
-  font-variation-settings: var(--font-weight-title);
+  font-variation-settings: "wght" var(--font-weight-title);
   font-size: 18px;
   line-height: 1.21;
   padding: 4px 24px 4px 10px;
@@ -163,7 +175,7 @@
   display: flex;
   flex-direction: column;
   gap: 29px;
-  font-variation-settings: var(--font-weight-main);
+  font-variation-settings: "wdth" var(--font-weight-main);
   font-size: 18px;
   line-height: 1.16;
   border-block-start: 2px solid var(--color-main, #000);
